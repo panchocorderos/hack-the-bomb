@@ -1,0 +1,10 @@
+INSERT INTO `achievements` (`id`, `name`, `description`, `score`, `state`, `createdAt`, `updatedAt`) VALUES (NULL, 'Crack!', 'Completaste un nivel sin errores!', '0', '0', '2021-05-10 00:00:00', '2021-05-10 00:00:00');
+INSERT INTO `topics` (`id`, `name`, `createdAt`, `updatedAt`) VALUES (NULL, 'Cultura General', '2021-05-10 00:00:00', '2021-05-10 00:00:00');
+INSERT INTO `codexes` (`id`, `text`, `createdAt`, `updatedAt`) VALUES (NULL, 'Busca en tu corazón', '2021-05-04 00:00:00', '2021-05-04 00:00:00');
+INSERT INTO `levels` (`id`, `level_number`, `difficulty`, `max_score`, `createdAt`, `updatedAt`, `topicId`, `codexId`) VALUES (NULL, '1', 'Fácil', '10', '2021-05-04 00:00:00', '2021-05-04 00:00:00', '1', '1');
+INSERT INTO `questions` (`id`, `question_text`, `createdAt`, `updatedAt`, `levelId`) VALUES (NULL, '¿Cuál es la capital de Chile?', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '1');
+INSERT INTO `answers` (`id`, `answer_text`, `is_correct`, `createdAt`, `updatedAt`, `questionId`) VALUES (NULL, 'Santiago', '1', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '2');
+INSERT INTO `answers` (`id`, `answer_text`, `is_correct`, `createdAt`, `updatedAt`, `questionId`) VALUES (NULL, 'Copiapo', '0', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '2');
+INSERT INTO `answers` (`id`, `answer_text`, `is_correct`, `createdAt`, `updatedAt`, `questionId`) VALUES (NULL, 'Concepción', '0', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '2');
+INSERT INTO `answers` (`id`, `answer_text`, `is_correct`, `createdAt`, `updatedAt`, `questionId`) VALUES (NULL, 'Arica', '0', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '2');
+INSERT INTO `game_players` (`id`, `username`, `createdAt`, `updatedAt`, `levelId`, `achievementId`) VALUES (NULL, 'pancho', '2021-05-10 00:00:00', '2021-05-10 00:00:00', '1', '1');
