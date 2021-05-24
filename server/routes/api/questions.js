@@ -14,22 +14,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:questionId', async (req, res) => {
-  const question = await Question.findOne({ 
-    where: {
-      id: req.params.questionId,
-    },
-    attributes: ['id', 'question_text', 'levelId']
-  });
-  const answers = await Answer.findAll({ 
-    where: { questionId: question.id},
-    raw: true,
-    attributes: ['id', 'answer_text', 'is_correct', 'questionId']
-  })
-  res.json({
-    question,
-    answers,
-  });
+router.get('/:levelId', async (req, res) => {
+
+  try {
+    const questions = await Question.findAll({ 
+      where: {
+        levelId: req.params.levelId,
+      },
+      attributes: ['id', 'question_text', 'levelId']
+    });
+    res.json({
+      questions,
+    });
+  }
+  catch (err) {
+    res.status(404);
+  }
 });
 
 module.exports = router;
