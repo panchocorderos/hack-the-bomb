@@ -32,7 +32,9 @@ router.get('/:levelId', async (req, res) => {
       attributes: ['id', 'question_text', 'levelId']
     });
     questionArr = questionIdArray(questions);
-    res.json(questionArr);
+    res.json({
+      "questions": questionArr
+    });
   }
   catch (err) {
     res.status(404);
