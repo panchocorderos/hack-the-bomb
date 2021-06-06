@@ -33,7 +33,8 @@ router.get('/:levelId', async (req, res) => {
     });
     questionArr = questionIdArray(questions);
     res.json({
-      "questions": questionArr
+      "questions": questionArr,
+      "quantity": questionArr.length,
     });
   }
   catch (err) {
