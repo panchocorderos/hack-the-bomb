@@ -3,6 +3,14 @@ const router = express.Router();
 
 const { Question, Answer } =  require('../../db');
 
+const questionIdArray = (questions) => {
+  let arrayQuestions = [];
+  for(let i = 0; i < questions.length; i++){
+    arrayQuestions.push(questions[i].id);
+  }
+  return arrayQuestions;
+}
+
 router.get('/', async (req, res) => {
   try {
     const questions = await Question.findAll({
@@ -23,9 +31,8 @@ router.get('/:levelId', async (req, res) => {
       },
       attributes: ['id', 'question_text', 'levelId']
     });
-    res.json({
-      questions,
-    });
+    questionArr = questionIdArray(questions);
+    res.json(questionArr);
   }
   catch (err) {
     res.status(404);
